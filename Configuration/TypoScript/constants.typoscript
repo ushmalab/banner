@@ -1,0 +1,41 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript">
+
+############
+### PAGE ###
+############
+page {
+     fluidtemplate {
+        layoutRootPath = EXT:banner_flash_message/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:banner_flash_message/Resources/Private/Partials/Page/
+        templateRootPath = EXT:banner_flash_message/Resources/Private/Templates/Page/
+    }
+    meta {
+        description =
+        author =
+        keywords =
+        viewport = width=device-width, initial-scale=1
+        robots = index,follow
+        apple-mobile-web-app-capable = no
+        compatible = IE=edge
+    }
+    tracking {
+        google {
+            trackingID =
+            anonymizeIp = 1
+        }
+    }
+}
+
+
+######################
+#### THEME SETTINGS ####
+######################
+
+# Theme Flash Message Configuration
+theme.tx_flashmessage {
+    # Storage page ID where global flash messages are stored
+    storagePid = 
+}

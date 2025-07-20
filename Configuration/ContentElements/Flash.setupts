@@ -1,0 +1,17 @@
+tt_content {
+    flash =< lib.contentElement
+    flash {
+        templateName = Flash
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            10 {
+                table = tt_content
+                pidInList.field = pid
+                where {
+                    data = field:uid
+                    intval = 1
+                }
+            }
+        }
+    }
+}

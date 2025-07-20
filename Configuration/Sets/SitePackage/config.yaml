@@ -1,0 +1,5 @@
+name: flash-message/banner-flash-message
+label: 'Banner Flash Message'
+dependencies:
+  - typo3/fluid-styled-content
+  - typo3/fluid-styled-content-css

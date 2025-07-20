@@ -1,0 +1,130 @@
+/* Flash Content Element */
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+      scroll-behavior: smooth;
+    }
+  }
+  
+  body {
+    margin: 0;
+  }
+
+  
+/* Full-width background container */
+.flash-message-container {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 15px 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Flash message content */
+.flash-message-content {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 500;
+}
+
+.flash-message-content strong {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+/* RTE link styling */
+.flash-message-content a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.flash-message-content a:hover {
+    text-decoration: underline;
+}
+
+.flash-message-content h1,
+.flash-message-content h2,
+.flash-message-content h3,
+.flash-message-content h4,
+.flash-message-content h5,
+.flash-message-content h6 {
+    margin: 0 0 0.5rem 0;
+    color: inherit;
+    font-family: var(--bs-body-font-family, "Inter");
+}
+
+.flash-message-content p{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Position variants */
+.flash-message-container.flash-position-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.flash-message-container.flash-position-bottom {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Simple animations */
+.flash-message-container.flash-position-top {
+    animation: slideInFromTop 0.3s ease-out;
+}
+
+.flash-message-container.flash-position-bottom {
+    animation: slideInFromBottom 0.3s ease-out;
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+/* Body padding for fixed positioned messages */
+body.has-flash-top {
+    padding-top: 70px;
+}
+
+body.has-flash-bottom {
+    padding-bottom: 70px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .flash-message-container {
+        padding: 12px 0;
+    }
+    .flash-message-content {
+        font-size: 14px;
+    }
+}
