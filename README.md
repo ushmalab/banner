@@ -21,7 +21,7 @@ theme.tx_flashmessage.storagePid = (set in backend)
 ## File Structure
 ```
 EXT:banner_flash_message/
-├── Configuration/ContentElements/Flash.setupts
+├── Configuration/ContentElements/Flash.typoscript
 ├── Configuration/TCA/Overrides/tt_content.php
 ├── Configuration/TypoScript/
 ├── Resources/Private/Templates/ContentElements/Flash.html
