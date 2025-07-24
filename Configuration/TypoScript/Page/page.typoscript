@@ -1,0 +1,23 @@
+page = PAGE
+page {
+    10 = FLUIDTEMPLATE
+    10 {
+        templateRootPaths {
+            100 = EXT:banner_flash_message/Resources/Private/Templates/
+        }
+        partialRootPaths {
+           100 = EXT:banner_flash_message/Resources/Private/Partials/
+        }
+        layoutRootPaths {
+           100 = EXT:banner_flash_message/Resources/Private/Layouts/Page/
+        }
+    }
+}
+
+page.10.file.cObject = CASE
+page.10.file.cObject {
+    key.data = levelfield:-1, backend_layout_next_level, slide
+    key.override.field = backend_layout
+    default = TEXT
+    default.value = EXT:banner_flash_message/Resources/Private/Templates/Page/Default.html
+}

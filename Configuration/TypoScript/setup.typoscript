@@ -1,0 +1,46 @@
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:banner_flash_message/Configuration/ContentElements/*.typoscript'
+
+##############
+#### PAGE ####
+##############
+@import 'EXT:banner_flash_message/Configuration/TypoScript/Helper/DynamicContent.typoscript'
+@import 'EXT:banner_flash_message/Configuration/TypoScript/Page/*.typoscript'
+
+# All content elements common configuration
+lib.contentElement {
+    templateRootPaths {
+        20 = EXT:banner_flash_message/Resources/Private/Templates/ContentElements/
+    }
+    partialRootPaths {
+        20 = EXT:banner_flash_message/Resources/Private/Partials/
+    }
+    layoutRootPaths {
+        20 = EXT:banner_flash_message/Resources/Private/Layouts/
+    }
+}
+
+# Global Flash CE
+page.headerData.999 = COA
+page.headerData.999 {
+    # Check if current page allows flash CE
+    if {
+        value.field = tx_flashmessage_show
+        equals = 1
+    }
+    
+    10 = CONTENT
+    10 {
+        table = tt_content
+        select {
+            # Flash messages storage PID
+            pidInList = {$theme.tx_flashmessage.storagePid}
+            where = CType='flash' AND tx_flashmessage_position IN ('top','bottom') AND hidden=0 AND deleted=0
+            orderBy = sorting
+            languageField = sys_language_uid
+        }
+        renderObj =< lib.contentElement
+        renderObj.templateName = Flash
+    }
+}
+

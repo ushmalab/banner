@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="messages" date="2024-01-01T00:00:00Z" product-name="banner_flash_message">
+        <header/>
+        <body>
+            <!-- Content Element -->
+            <trans-unit id="flash.title">
+                <source>Flash Message</source>
+            </trans-unit>
+            <trans-unit id="flash.description">
+                <source>Display important messages with customizable colors and positioning.</source>
+            </trans-unit>
+            
+            <!-- Field Labels -->
+            <trans-unit id="flash.bodytext">
+                <source>Message Content</source>
+            </trans-unit>
+            <trans-unit id="flash.bodytext.description">
+                <source>Enter the message content. You can use rich text formatting and links.</source>
+            </trans-unit>
+            
+            <trans-unit id="flash.tx_flashmessage_bgcolor">
+                <source>Background Color</source>
+            </trans-unit>
+            <trans-unit id="flash.tx_flashmessage_bgcolor.description">
+                <source>Choose the background color for the flash message.</source>
+            </trans-unit>
+            
+            <trans-unit id="flash.tx_flashmessage_textcolor">
+                <source>Text Color</source>
+            </trans-unit>
+            <trans-unit id="flash.tx_flashmessage_textcolor.description">
+                <source>Choose the text color.</source>
+            </trans-unit>
+            
+            <trans-unit id="flash.tx_flashmessage_position">
+                <source>Display Position</source>
+            </trans-unit>
+            <trans-unit id="flash.tx_flashmessage_position.description">
+                <source>Choose where the flash message should appear on the page.</source>
+            </trans-unit>
+            
+            <!-- Position Options -->
+            <trans-unit id="flash.position.top">
+                <source>Fixed Top (Sticky Banner)</source>
+            </trans-unit>
+            <trans-unit id="flash.position.bottom">
+                <source>Fixed Bottom (Sticky Footer)</source>
+            </trans-unit>
+            
+            <!-- Tab Labels -->
+            <trans-unit id="flash.tabs.content">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="flash.tabs.styling">
+                <source>Styling</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

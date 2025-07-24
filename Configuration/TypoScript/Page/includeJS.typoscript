@@ -1,0 +1,5 @@
+page{
+	includeJSFooter {
+        flashContentElement = EXT:banner_flash_message/Resources/Public/JavaScript/script.js
+    }
+}
