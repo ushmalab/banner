@@ -1,11 +1,11 @@
 @import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:banner_flash_message/Configuration/ContentElements/" extensions="setupts">
+@import 'EXT:banner_flash_message/Configuration/ContentElements/*.typoscript'
 
 ##############
 #### PAGE ####
 ##############
 @import 'EXT:banner_flash_message/Configuration/TypoScript/Helper/DynamicContent.typoscript'
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:banner_flash_message/Configuration/TypoScript/Page/" extensions="setupts">
+@import 'EXT:banner_flash_message/Configuration/TypoScript/Page/*.typoscript'
 
 # All content elements common configuration
 lib.contentElement {

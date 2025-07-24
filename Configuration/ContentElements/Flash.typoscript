@@ -1,0 +1,6 @@
+tt_content {
+    flash =< lib.contentElement
+    flash {
+        templateName = Flash
+    }
+}

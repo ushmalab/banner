@@ -2,7 +2,6 @@
 defined('TYPO3') or die('Access denied.');
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 // Register static TypoScript configuration
 ExtensionManagementUtility::addStaticFile(
