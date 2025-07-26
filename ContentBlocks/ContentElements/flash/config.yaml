@@ -1,0 +1,46 @@
+name: banner/flash
+typeName: banner_flash
+group: Content Block
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+  - TYPO3/Language
+  - TYPO3/Access
+  - TYPO3/Categories
+  - TYPO3/Notes
+fields:
+  - identifier: header
+    useExistingField: true
+  - identifier: subheader
+    useExistingField: true
+  - identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+    richtextConfiguration: banner_flash_message
+  - identifier: styling
+    type: Tab
+    label: 'Styling'
+  - identifier: colors
+    type: Palette
+    label: 'Colors'
+    fields:
+      - identifier: tx_flashmessage_bgcolor
+        type: Color
+        default: '#007bff'
+        label: 'Background Color'
+      - identifier: tx_flashmessage_textcolor  
+        type: Color
+        default: '#ffffff'
+        label: 'Text Color'
+  - identifier: tx_flashmessage_position
+    type: Select
+    label: 'Position'
+    default: 'top'
+    renderType: selectSingle
+    items:
+      - label: 'Top'
+        value: 'top'
+      - label: 'Bottom'  
+        value: 'bottom'

@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{data.bodytext}">
+    <div class="flash-message-container flash-position-{data.tx_flashmessage_position}"
+         style="background-color:{data.tx_flashmessage_bgcolor};" 
+         data-flash-type="{data.tx_flashmessage_position}"
+         id="flash-message-{data.uid}">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="flash-message-wrapper">
+                        <div class="flash-message-content" style="color:{data.tx_flashmessage_textcolor};">
+                            <f:format.html>{data.bodytext}</f:format.html>
+                        </div>
+                    </div>
+                    <button type="button" class="close-btn" aria-label="Close"
+                            style="color: {data.tx_flashmessage_textcolor};">✕</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:if>
