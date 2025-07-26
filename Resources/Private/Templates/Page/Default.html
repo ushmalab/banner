@@ -1,4 +1,10 @@
 <f:layout name="Default" />
 <f:section name="Main">
+    <section class="banner-section">
+        <f:cObject typoscriptObjectPath="lib.bannerContent"/>
+    </section>
     <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
+    <section class="footer-section">
+        <f:cObject typoscriptObjectPath="lib.footerContent"/>
+    </section>
 </f:section>

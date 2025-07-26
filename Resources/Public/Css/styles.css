@@ -90,6 +90,29 @@
 .flash-message-container.flash-position-bottom {
     animation: slideInFromBottom 0.3s ease-out;
 }
+/* 
+Close Button */
+.close-btn {
+    position: absolute;
+    right: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 10px;       
+    line-height: 28px;     
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;            
+}
+.close-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
 
 @keyframes slideInFromTop {
     from {

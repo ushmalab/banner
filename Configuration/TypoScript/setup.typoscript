@@ -6,6 +6,7 @@
 ##############
 @import 'EXT:banner_flash_message/Configuration/TypoScript/Helper/DynamicContent.typoscript'
 @import 'EXT:banner_flash_message/Configuration/TypoScript/Page/*.typoscript'
+@import 'EXT:banner_flash_message/Configuration/TypoScript/Library/*.typoscript'
 
 # All content elements common configuration
 lib.contentElement {

@@ -20,4 +20,6 @@ page.10.file.cObject {
     key.override.field = backend_layout
     default = TEXT
     default.value = EXT:banner_flash_message/Resources/Private/Templates/Page/Default.html
+    pagets__StartPage = TEXT
+    pagets__StartPage.value = EXT:banner_flash_message/Resources/Private/Templates/Page/StartPage.html
 }

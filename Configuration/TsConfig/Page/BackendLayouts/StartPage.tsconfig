@@ -1,0 +1,46 @@
+#
+# BACKENDLAYOUT: DEFAULT
+#
+mod {
+    web_layout {
+        BackendLayouts {
+         StartPage  {
+                title = StartPage 
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 3
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Banner
+                                        colPos = 11
+                                    }
+                                }
+                            }
+                             2 {
+                                columns {
+                                    1 {
+                                        name = Normal
+                                        colPos = 14
+                                    }
+                                }
+                            }
+                             3 {
+                                columns {
+                                    1 {
+                                        name = Footer
+                                        colPos = 12
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+                icon = EXT:banner_flash_message/Resources/Public/Icons/BackendLayouts/StartPage.svg
+            }
+        }
+    }
+}
