@@ -1,0 +1,14 @@
+lib.bannerContent = COA
+lib.bannerContent {
+    10 < styles.content.get
+    10.slide = -1
+    10.select.where = colPos=11
+}
+
+
+lib.footerContent = COA
+lib.footerContent {
+    10 < styles.content.get
+    10.slide = -1
+    10.select.where = colPos=12
+}
