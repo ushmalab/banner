@@ -4,7 +4,8 @@
 CREATE TABLE tt_content (
     tx_flashmessage_bgcolor VARCHAR(7) DEFAULT '' NOT NULL,
     tx_flashmessage_textcolor VARCHAR(7) DEFAULT '' NOT NULL,
-    tx_flashmessage_position VARCHAR(10) DEFAULT 'normal' NOT NULL
+    tx_flashmessage_position VARCHAR(10) DEFAULT 'top' NOT NULL,
+    tx_flashmessage_image int(11) unsigned DEFAULT 0 NOT NULL
 );
 
 -- Add field to pages table for global flash message toggle

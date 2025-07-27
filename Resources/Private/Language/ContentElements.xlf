@@ -55,6 +55,14 @@
             <trans-unit id="flash.tabs.styling">
                 <source>Styling</source>
             </trans-unit>
+
+             <!-- Image -->
+            <trans-unit id="flash.tx_flashmessage_image">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="flash.tx_flashmessage_image.description">
+                <source>Optional image for the flash message</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

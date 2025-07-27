@@ -4,13 +4,12 @@
     :root {
       scroll-behavior: smooth;
     }
-  }
+}
   
-  body {
+body {
     margin: 0;
-  }
+}
 
-  
 /* Full-width background container */
 .flash-message-container {
     width: 100vw;
@@ -22,6 +21,25 @@
     padding: 15px 0;
     margin-top: 0;
     margin-bottom: 0;
+    transition: all 0.3s ease-out; /* Added for smooth hide/show animations */
+}
+
+/* Hidden state for close functionality */
+.flash-message-container.hidden {
+    display: none;
+}
+
+.flash-message-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.flash-message-image img {
+    max-width: 70%;
+    height: auto;
+    object-fit: cover;
 }
 
 /* Flash message content */
@@ -29,13 +47,8 @@
     font-size: 1rem;
     line-height: 1.5;
     margin: 0;
-    font-weight: 500;
+    margin-top: 25px;
 }
-
-.flash-message-content strong {
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
 
 /* RTE link styling */
 .flash-message-content a {
@@ -57,13 +70,18 @@
     margin: 0 0 0.5rem 0;
     color: inherit;
     font-family: var(--bs-body-font-family, "Inter");
+    margin-bottom: 22px;
 }
 
-.flash-message-content p{
+.flash-message-content p {
     margin: 0;
     padding: 0;
+    margin-bottom: 20px;
 }
 
+.flash-message-content p:last-child {
+    margin-bottom: 100px;
+}
 
 /* Position variants */
 .flash-message-container.flash-position-top {
@@ -90,28 +108,82 @@
 .flash-message-container.flash-position-bottom {
     animation: slideInFromBottom 0.3s ease-out;
 }
-/* 
-Close Button */
+
+/* Close Button */
 .close-btn {
     position: absolute;
     right: 45px;
-    top: 50%;
+    top: 10%;
     transform: translateY(-50%);
     background: rgba(255,255,255,0.2);
-    border: none;
     width: 28px;
     height: 28px;
     border-radius: 50%;
+    border: 2px solid; 
     cursor: pointer;
     font-size: 10px;       
     line-height: 28px;     
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;            
+    padding: 0;
+    transition: all 0.2s ease; /* Added smooth hover transition */
 }
+
 .close-btn:hover {
     background: rgba(255,255,255,0.3);
+    border-color: inherit;
+    transform: translateY(-50%) scale(1.1); /* Added scale effect on hover */
+}
+
+/* Show Again Icon */
+.show-again-icon {
+    position: fixed;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: inherit;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 10000; /* Higher than flash message */
+    animation: pulse 2s infinite;
+}
+
+/* Position-specific show again icons */
+.show-again-icon.flash-position-top {
+    top: 25px;
+}
+
+.show-again-icon.flash-position-bottom {
+    bottom: 20px;
+}
+
+.show-again-icon.visible {
+    display: flex;
+}
+
+.show-again-icon:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    filter: brightness(1.2);
+}
+
+/* Pulse animation to draw attention */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
 }
 
 @keyframes slideInFromTop {
@@ -132,6 +204,28 @@ Close Button */
     }
 }
 
+/* Slide out animations for close functionality */
+@keyframes slideOutToTop {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideOutToBottom {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
 
 /* Body padding for fixed positioned messages */
 body.has-flash-top {
@@ -147,7 +241,30 @@ body.has-flash-bottom {
     .flash-message-container {
         padding: 12px 0;
     }
+    
     .flash-message-content {
         font-size: 14px;
+    }
+    
+    .close-btn {
+        right: 20px;
+        width: 24px;
+        height: 24px;
+        font-size: 9px;
+    }
+    
+    .show-again-icon {
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .show-again-icon.flash-position-top {
+        top: 15px;
+    }
+    
+    .show-again-icon.flash-position-bottom {
+        bottom: 15px;
     }
 }

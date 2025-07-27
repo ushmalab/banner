@@ -17,7 +17,6 @@ $GLOBALS['TCA']['tt_content']['types']['text']['columnsOverrides']['bodytext'] =
     ],
 ];
 
-
 // Flash CE
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
@@ -43,6 +42,7 @@ $GLOBALS['TCA']['tt_content']['types']['flash'] = [
             --palette--;' . $frontendLanguageFilePrefix . 'palette.general;general,
             --palette--;' . $frontendLanguageFilePrefix . 'palette.headers;headers,
             bodytext;' . $contentElementLanguageFilePrefix . 'flash.bodytext,
+            tx_flashmessage_image;' . $contentElementLanguageFilePrefix . 'flash.tx_flashmessage_image,
         --div--;' . $contentElementLanguageFilePrefix . 'flash.tabs.styling,
             --palette--;;flash_colors,
             tx_flashmessage_position;' . $contentElementLanguageFilePrefix . 'flash.tx_flashmessage_position,
@@ -109,6 +109,47 @@ $temporaryDataColumnReferences = [
                 ],
             ],
             'default' => 'top',
+        ],
+    ],
+    'tx_flashmessage_image' => [
+        'label' => $contentElementLanguageFilePrefix . 'flash.tx_flashmessage_image',
+        'description' => $contentElementLanguageFilePrefix . 'flash.tx_flashmessage_image.description',
+        'config' => [
+            'type' => 'file',
+            'allowed' => 'common-image-types',
+            'maxitems' => 1,
+            'minitems' => 0,
+            'appearance' => [
+                'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                'showSynchronizationLink' => 1,
+                'showAllLocalizationLink' => 1,
+                'showPossibleLocalizationRecords' => 1,
+                'showRemovedLocalizationRecords' => 1,
+            ],
+            'overrideChildTca' => [
+                'columns' => [
+                    'uid_local' => [
+                        'config' => [
+                            'appearance' => [
+                                'elementBrowserType' => 'file',
+                                'elementBrowserAllowed' => 'jpg,jpeg,png,gif,svg,webp'
+                            ]
+                        ]
+                    ]
+                ],
+                'types' => [
+                    '0' => [
+                        'showitem' => '
+                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                            --palette--;;filePalette'
+                    ],
+                    \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                        'showitem' => '
+                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                            --palette--;;filePalette'
+                    ],
+                ],
+            ],
         ],
     ],
 ];

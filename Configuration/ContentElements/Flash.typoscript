@@ -2,5 +2,13 @@ tt_content {
     flash =< lib.contentElement
     flash {
         templateName = Flash
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = tx_flashmessage_image
+                references.table = tt_content
+                as = image
+            }
+        }
     }
 }

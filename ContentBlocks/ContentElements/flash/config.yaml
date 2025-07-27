@@ -19,6 +19,12 @@ fields:
     useExistingField: true
     enableRichtext: true
     richtextConfiguration: banner_flash_message
+  - identifier: image
+    type: File
+    label: 'Image'
+    allowed: 'jpg,jpeg,png,gif,svg,webp'
+    maxitems: 1
+    description: 'Optional image for the flash message'
   - identifier: styling
     type: Tab
     label: 'Styling'

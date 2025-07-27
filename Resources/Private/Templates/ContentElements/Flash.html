@@ -13,17 +13,49 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="flash-message-wrapper">
-                            <div class="flash-message-content" style="color:{data.tx_flashmessage_textcolor};">
-                                {data.bodytext -> f:format.html()}
+                    <f:if condition="{image}">
+                        <f:then>
+                            <div class="col-md-4">
+                                <div class="flash-message-image">
+                                    <f:for each="{image}" as="imageFile">
+                                        <f:image image="{imageFile}" alt="{imageFile.alternative}" title="{imageFile.title}" />
+                                    </f:for>
+                                </div>
                             </div>
-                        </div>
-                        <button type="button" class="close-btn" aria-label="Close"
-    style="color: {data.tx_flashmessage_textcolor};">✕</button>
-                    </div>
+                            <div class="col-md-8">
+                                <div class="flash-message-wrapper">
+                                    <div class="flash-message-content" style="color:{data.tx_flashmessage_textcolor};">
+                                        {data.bodytext -> f:format.html()}
+                                    </div>
+                                </div>
+                                <button type="button" class="close-btn" aria-label="Close"
+                                        style="color: {data.tx_flashmessage_textcolor};">✕</button>
+                            </div>
+                        </f:then>
+                        <f:else>
+                            <div class="col-md-12">
+                                <div class="flash-message-wrapper">
+                                    <div class="flash-message-content" style="color:{data.tx_flashmessage_textcolor};">
+                                        {data.bodytext -> f:format.html()}
+                                    </div>
+                                </div>
+                                <button type="button" class="close-btn" aria-label="Close"
+                                        style="color: {data.tx_flashmessage_textcolor};">✕</button>
+                            </div>
+                        </f:else>
+                    </f:if>
                 </div>
             </div>
         </div>
+
+        <!-- Show Again Icon -->
+        <div class="show-again-icon flash-position-{data.tx_flashmessage_position}" 
+             id="show-again-{data.uid}" 
+             style="background-color: {data.tx_flashmessage_bgcolor};" 
+             data-flash-id="flash-message-{data.uid}"
+             title="Show flash message again">
+            💬
+        </div>
     </f:if>
+
 </f:section>
