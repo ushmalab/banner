@@ -21,7 +21,7 @@ body {
     padding: 15px 0;
     margin-top: 0;
     margin-bottom: 0;
-    transition: all 0.3s ease-out; /* Added for smooth hide/show animations */
+    transition: all 0.3s ease-out; 
 }
 
 /* Hidden state for close functionality */
@@ -34,12 +34,14 @@ body {
     align-items: center;
     justify-content: center;
     padding: 15px;
+    margin-top: 25px;
 }
 
 .flash-message-image img {
     max-width: 70%;
     height: auto;
     object-fit: cover;
+    filter: invert(1);
 }
 
 /* Flash message content */
@@ -80,7 +82,7 @@ body {
 }
 
 .flash-message-content p:last-child {
-    margin-bottom: 100px;
+    margin-bottom: 70px;
 }
 
 /* Position variants */
@@ -127,13 +129,13 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0;
-    transition: all 0.2s ease; /* Added smooth hover transition */
+    transition: all 0.2s ease; 
 }
 
 .close-btn:hover {
     background: rgba(255,255,255,0.3);
     border-color: inherit;
-    transform: translateY(-50%) scale(1.1); /* Added scale effect on hover */
+    transform: translateY(-50%) scale(1.1); 
 }
 
 /* Show Again Icon */
@@ -148,14 +150,15 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    color: inherit;
+    font-family: serif;
+    font-weight: bold;
+    font-style: italic;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    z-index: 10000; /* Higher than flash message */
+    z-index: 10000;
     animation: pulse 2s infinite;
 }
 
-/* Position-specific show again icons */
 .show-again-icon.flash-position-top {
     top: 25px;
 }
@@ -173,7 +176,7 @@ body {
     filter: brightness(1.2);
 }
 
-/* Pulse animation to draw attention */
+/* Pulse animation */
 @keyframes pulse {
     0% {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
